@@ -16,11 +16,15 @@ def hola_html():
 
 @app.route('/json')
 def json():
-    return '{"nombre":"john"}'
+    return Response( '{"nombre":"john"}', mimetype='application/json' )
 
 @app.route('/xml')
 def xml():
-    return '<?xml version="1.0"?><nombre>john</nombre>'
-
+    xml= '''<?xml version='1.0'?> 
+    <persona>
+    <nombre>john</nombre> 
+    </persona>'''
+        
+    return Response(xml, mimetype='application/xml')
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
