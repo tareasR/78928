@@ -24,7 +24,7 @@ def xml():
     <persona>
     <nombre>john</nombre> 
     </persona>'''
-        
     return Response(xml, mimetype='application/xml')
+    
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
