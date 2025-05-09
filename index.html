@@ -8,8 +8,12 @@
 </head>
 
 <body>
+	<h1>show me the web-mqtt</h1>
+	<div id="app"></app>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
     <script>
+
+	    const mensaje = document.getElementById("app")
         // Create a client instance
         // client = new Paho.MQTT.Client("ip172-18-0-136-d0edgo0l2o9000e6d6a0-9001.direct.labs.play-with-docker.com", Number(9001), "clientId");
         // client = new Paho.MQTT.Client("mqtt-production-72db.up.railway.app", Number(1883), "clientId");
@@ -44,6 +48,7 @@
         // called when a message arrives
         function onMessageArrived(message) {
             console.log("onMessageArrived:" + message.payloadString);
+            mensaje.innerHTML = message.payloadString;
         }
     </script>
 
